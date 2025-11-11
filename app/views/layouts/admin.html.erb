@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR" x-data="{ sidebarToggle: false, darkMode: false }" x-init="darkMode = JSON.parse(localStorage.getItem('darkMode') || 'false'); $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))" :class="{'dark bg-gray-900': darkMode === true}">
+  <head>
+    <title><%= content_for(:title) || "Admin - Pedro Dalben" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= vite_client_tag %>
+    <%= vite_stylesheet_tag "application.css" %>
+    <%= vite_javascript_tag 'application' %>
+  </head>
+  <body>
+    <div class="flex h-screen overflow-hidden">
+      <%= render "shared/admin/sidebar" %>
+      
+      <div class="relative flex flex-1 flex-col overflow-x-hidden overflow-y-auto">
+        <%= render "shared/admin/overlay" %>
+        
+        <main>
+          <%= render "shared/admin/header" %>
+          
+          <div class="mx-auto max-w-screen-2xl p-4 md:p-6">
+            <% if notice %>
+              <div class="mb-4 rounded-lg bg-green-50 p-4 text-green-800 dark:bg-green-900/20 dark:text-green-400">
+                <%= notice %>
+              </div>
+            <% end %>
+            
+            <% if alert %>
+              <div class="mb-4 rounded-lg bg-red-50 p-4 text-red-800 dark:bg-red-900/20 dark:text-red-400">
+                <%= alert %>
+              </div>
+            <% end %>
+            
+            <%= yield %>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
+
+
