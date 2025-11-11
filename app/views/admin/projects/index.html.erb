@@ -1,0 +1,37 @@
+<div class="mb-6 flex items-center justify-between">
+  <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Projetos</h1>
+  <%= link_to "Novo Projeto", new_admin_project_path, class: "rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700" %>
+</div>
+
+<div class="overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
+  <table class="w-full">
+    <thead class="bg-gray-50 dark:bg-gray-800">
+      <tr>
+        <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400">Título</th>
+        <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400">Tipo</th>
+        <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400">Status</th>
+        <th class="px-6 py-3 text-left text-xs font-medium uppercase text-gray-500 dark:text-gray-400">Ações</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200 dark:divide-gray-800">
+      <% @projects.each do |project| %>
+        <tr class="hover:bg-gray-50 dark:hover:bg-gray-800">
+          <td class="px-6 py-4 text-sm font-medium text-gray-900 dark:text-white"><%= project.title %></td>
+          <td class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400"><%= project.project_type || '-' %></td>
+          <td class="px-6 py-4">
+            <% if project.published? %>
+              <span class="inline-flex rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800 dark:bg-green-900/20 dark:text-green-400">Publicado</span>
+            <% else %>
+              <span class="inline-flex rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-800 dark:bg-gray-800 dark:text-gray-400">Rascunho</span>
+            <% end %>
+          </td>
+          <td class="px-6 py-4 text-sm">
+            <%= link_to "Editar", edit_admin_project_path(project), class: "text-blue-600 hover:text-blue-900 dark:text-blue-400" %>
+            <%= link_to "Excluir", admin_project_path(project), data: { turbo_method: :delete, turbo_confirm: "Tem certeza?" }, class: "ml-4 text-red-600 hover:text-red-900 dark:text-red-400" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

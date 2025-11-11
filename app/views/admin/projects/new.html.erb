@@ -1,0 +1,66 @@
+<div class="mb-6">
+  <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Novo Projeto</h1>
+</div>
+
+<%= form_with model: [:admin, @project], class: "space-y-6 rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900" do |f| %>
+  <% if @project.errors.any? %>
+    <div class="rounded-lg bg-red-50 p-4 text-red-800 dark:bg-red-900/20 dark:text-red-400">
+      <ul>
+        <% @project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :title, "Título", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+    <%= f.text_field :title, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+  </div>
+
+  <div>
+    <%= f.label :description, "Descrição", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+    <%= f.text_area :description, rows: 4, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+  </div>
+
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div>
+      <%= f.label :url, "URL", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+      <%= f.text_field :url, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+    </div>
+
+    <div>
+      <%= f.label :github_url, "GitHub URL", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+      <%= f.text_field :github_url, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :image_url, "URL da Imagem", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+    <%= f.text_field :image_url, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+  </div>
+
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+    <div>
+      <%= f.label :project_type, "Tipo", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+      <%= f.select :project_type, [["Pessoal", "personal"], ["Cliente", "client"]], { prompt: "Selecione" }, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+    </div>
+
+    <div class="flex items-center">
+      <%= f.check_box :featured, class: "h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" %>
+      <%= f.label :featured, "Destaque", class: "ml-2 text-sm font-medium text-gray-700 dark:text-gray-300" %>
+    </div>
+
+    <div class="flex items-center">
+      <%= f.check_box :published, class: "h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" %>
+      <%= f.label :published, "Publicado", class: "ml-2 text-sm font-medium text-gray-700 dark:text-gray-300" %>
+    </div>
+  </div>
+
+  <div class="flex gap-4">
+    <%= f.submit "Criar Projeto", class: "rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700" %>
+    <%= link_to "Cancelar", admin_projects_path, class: "rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800" %>
+  </div>
+<% end %>
+
+

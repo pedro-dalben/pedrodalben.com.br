@@ -1,0 +1,61 @@
+<div class="mb-6">
+  <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Novo Cliente</h1>
+</div>
+
+<%= form_with model: [:admin, @client], class: "space-y-6 rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900" do |f| %>
+  <% if @client.errors.any? %>
+    <div class="rounded-lg bg-red-50 p-4 text-red-800 dark:bg-red-900/20 dark:text-red-400">
+      <ul>
+        <% @client.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div>
+      <%= f.label :name, "Nome", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+      <%= f.text_field :name, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+    </div>
+
+    <div>
+      <%= f.label :company_name, "Empresa", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+      <%= f.text_field :company_name, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <div>
+      <%= f.label :email, "Email", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+      <%= f.email_field :email, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+    </div>
+
+    <div>
+      <%= f.label :phone, "Telefone", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+      <%= f.text_field :phone, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+    </div>
+  </div>
+
+  <div>
+    <%= f.label :website_url, "Website", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+    <%= f.text_field :website_url, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+  </div>
+
+  <div>
+    <%= f.label :logo_url, "URL do Logo", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+    <%= f.text_field :logo_url, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+  </div>
+
+  <div>
+    <%= f.label :notes, "Notas", class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
+    <%= f.text_area :notes, rows: 4, class: "mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-purple-500 focus:outline-none focus:ring-purple-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white" %>
+  </div>
+
+  <div class="flex gap-4">
+    <%= f.submit "Criar Cliente", class: "rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white hover:bg-purple-700" %>
+    <%= link_to "Cancelar", admin_clients_path, class: "rounded-lg border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800" %>
+  </div>
+<% end %>
+
+
