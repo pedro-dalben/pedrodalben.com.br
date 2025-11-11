@@ -1,0 +1,43 @@
+<div class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+  <nav class="border-b border-white/10 bg-white/5 backdrop-blur-md">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <%= link_to root_path, class: "flex items-center" do %>
+          <span class="text-xl font-bold text-white">Pedro Dalben</span>
+        <% end %>
+        <div class="flex items-center gap-6">
+          <%= link_to "Portfólio", root_path, class: "text-gray-300 hover:text-white transition-colors" %>
+          <%= link_to "Blog", blog_path, class: "text-white font-medium" %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+    <%= link_to "← Voltar ao Blog", blog_path, class: "mb-6 text-purple-400 hover:text-purple-300 transition-colors inline-flex items-center gap-2" %>
+
+    <article class="rounded-2xl bg-white/10 backdrop-blur-md p-8 border border-white/20">
+      <h1 class="text-4xl font-bold text-white mb-4"><%= @post.title %></h1>
+      
+      <p class="mb-6 text-sm text-gray-400">
+        <%= @post.published_at&.strftime("%d de %B de %Y") || "Sem data" %>
+      </p>
+
+      <% if @post.featured_image_url.present? %>
+        <img src="<%= @post.featured_image_url %>" alt="<%= @post.title %>" class="mb-8 h-64 w-full rounded-xl object-cover">
+      <% end %>
+
+      <div class="prose prose-invert max-w-none">
+        <p class="whitespace-pre-wrap text-gray-300 leading-relaxed"><%= @post.content %></p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-white/10 bg-white/5 backdrop-blur-md py-8 mt-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-gray-400">
+        <p>&copy; <%= Date.current.year %> Pedro Dalben. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</div>

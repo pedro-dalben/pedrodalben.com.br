@@ -1,0 +1,139 @@
+<div class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+  <nav class="border-b border-white/10 bg-white/5 backdrop-blur-md">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <%= link_to root_path, class: "flex items-center" do %>
+          <span class="text-xl font-bold text-white">Pedro Dalben</span>
+        <% end %>
+        <div class="flex items-center gap-6">
+          <%= link_to "Portfólio", portfolio_path, class: "text-gray-300 hover:text-white transition-colors" %>
+          <%= link_to "Blog", blog_path, class: "text-gray-300 hover:text-white transition-colors" %>
+          <%= link_to "Sobre", about_path, class: "text-white font-medium" %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold text-white mb-4">Sobre Mim</h1>
+      <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+    </div>
+
+    <div class="rounded-2xl bg-white/10 backdrop-blur-md p-8 md:p-12 border border-white/20 mb-8">
+      <div class="prose prose-invert max-w-none">
+        <p class="text-xl text-gray-300 leading-relaxed mb-6">
+          Sou <strong class="text-white">Pedro Dalben</strong>, desenvolvedor e arquiteto de software com mais de cinco anos de experiência, apaixonado por criar soluções tecnológicas que realmente fazem a diferença.
+        </p>
+
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          Atuo como <strong class="text-white">CTO e líder de desenvolvimento</strong> do sistema <strong class="text-white">Integrar Plus</strong>, uma plataforma voltada para clínicas terapêuticas que une tecnologia e cuidado humano. No projeto, conduzo toda a arquitetura técnica — do backend em Ruby on Rails ao frontend com Vue.js, Hotwire e Tailwind — além de gerenciar integrações com APIs como Google Calendar, Asaas e sistemas de operadoras de saúde.
+        </p>
+
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          Minha especialidade está em transformar ideias complexas em soluções funcionais, escaláveis e seguras. Tenho experiência sólida em DevOps (Docker, PostgreSQL, Sidekiq, Nginx, Cloudflare) e na criação de sistemas completos, com automação, análise de dados e interfaces modernas.
+        </p>
+
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          Além do trabalho na área da saúde, desenvolvo projetos pessoais que refletem minha versatilidade e criatividade — como o servidor de Minecraft, o sistema imobiliário MaxiCorretor.
+        </p>
+
+        <p class="text-lg text-gray-300 leading-relaxed italic border-l-4 border-purple-500 pl-6">
+          Mais do que escrever código, acredito que tecnologia é uma forma de transformar realidades — e é isso que me move a cada novo projeto.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          <span>🛠️</span>
+          Habilidades Técnicas
+        </h2>
+        <div class="flex flex-wrap gap-3">
+          <% ["Vue.js", "Ruby", "Ruby on Rails", "JavaScript", "Python", "Java"].each do |skill| %>
+            <div class="flex items-center gap-2 rounded-lg bg-purple-600/30 px-3 py-2 text-sm text-white border border-purple-500/50">
+              <%= tech_icon(skill) %>
+              <span><%= skill %></span>
+            </div>
+          <% end %>
+          <div class="flex items-center gap-2 rounded-lg bg-purple-600/30 px-3 py-2 text-sm text-white border border-purple-500/50">
+            <%= tech_icon("Liderança") %>
+            <span>Liderança</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20">
+        <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          <span>💼</span>
+          Experiência
+        </h2>
+        <div class="space-y-3 text-gray-300">
+          <div>
+            <div class="font-semibold text-white">CTO</div>
+            <div class="text-sm">Integrar Centro Terapeutico</div>
+            <div class="text-xs text-gray-400">junho/2025</div>
+          </div>
+          <div>
+            <div class="font-semibold text-white">Desenvolvedor Full Stack</div>
+            <div class="text-sm">Appolus Tecnologia</div>
+            <div class="text-xs text-gray-400">junho/2024 - junho/2025</div>
+          </div>
+          <div>
+            <div class="font-semibold text-white">Líder Técnico</div>
+            <div class="text-sm">Kazap Tecnologia</div>
+            <div class="text-xs text-gray-400">jun/2022 - junho/2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-2xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-md p-8 border border-white/20 mb-8">
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 mb-4">
+          <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <h2 class="text-2xl font-bold text-white mb-4">Mentoria em Desenvolvimento</h2>
+        <p class="text-gray-300 mb-6">
+          Ofereço mentoria personalizada para desenvolvedores que desejam acelerar sua carreira. Com mais de cinco anos de experiência, posso ajudar você a dominar tecnologias modernas, desenvolver habilidades de arquitetura e transicionar para posições de liderança técnica.
+        </p>
+        <a href="mailto:pedrodalbenmorais@gmail.com?subject=Mentoria em Desenvolvimento" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg shadow-purple-500/50">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Agendar uma conversa
+        </a>
+      </div>
+    </div>
+
+    <div class="rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">Vamos conversar?</h2>
+      <p class="text-white/90 mb-6">Estou sempre aberto a novos projetos e oportunidades de colaboração</p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <%= link_to "https://www.linkedin.com/in/pedrodalbendemorais", target: "_blank", rel: "noopener noreferrer", class: "inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-purple-600 font-semibold hover:bg-gray-100 transition-all" do %>
+          <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          LinkedIn
+        <% end %>
+        <a href="mailto:pedrodalbenmorais@gmail.com" class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-purple-600 font-semibold hover:bg-gray-100 transition-all">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          pedrodalbenmorais@gmail.com
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/10 bg-white/5 backdrop-blur-md py-8 mt-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-gray-400">
+        <p>&copy; <%= Date.current.year %> Pedro Dalben. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</div>

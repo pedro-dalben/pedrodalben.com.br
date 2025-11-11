@@ -1,0 +1,362 @@
+<div class="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-md">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <div class="flex items-center">
+          <a href="#inicio" class="text-xl font-bold text-white hover:text-purple-400 transition-colors cursor-pointer">Pedro Dalben</a>
+        </div>
+        <div class="flex items-center gap-6">
+          <a href="#sobre" class="text-gray-300 hover:text-white transition-colors">Sobre</a>
+          <a href="#habilidades" class="text-gray-300 hover:text-white transition-colors">Habilidades</a>
+          <a href="#mentoria" class="text-gray-300 hover:text-white transition-colors">Mentoria</a>
+          <a href="#experiencia" class="text-gray-300 hover:text-white transition-colors">Experiência</a>
+          <a href="#hobbies" class="text-gray-300 hover:text-white transition-colors">Hobbies</a>
+          <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors">Portfólio</a>
+          <%= link_to "Blog", blog_path, class: "text-gray-300 hover:text-white transition-colors" %>
+          <a href="#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a>
+          <% if user_signed_in? %>
+            <%= link_to "Admin", admin_dashboard_path, class: "rounded-lg bg-purple-600 px-4 py-2 text-sm font-medium text-white hover:bg-purple-700 transition-colors" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-16">
+    <section id="inicio" class="relative overflow-hidden py-20 sm:py-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold text-white sm:text-6xl lg:text-7xl mb-6">
+              <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Pedro Dalben
+              </span>
+            </h1>
+            <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+              Desenvolvedor e arquiteto de software com mais de cinco anos de experiência, apaixonado por criar soluções tecnológicas que realmente fazem a diferença.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+              <%= link_to "https://www.linkedin.com/in/pedrodalbendemorais", target: "_blank", rel: "noopener noreferrer", class: "inline-flex items-center gap-2 rounded-lg bg-white/10 px-6 py-3 text-white backdrop-blur-sm hover:bg-white/20 transition-all border border-white/20" do %>
+                <%= social_icon("linkedin") %>
+                LinkedIn
+              <% end %>
+              <a href="mailto:pedrodalbenmorais@gmail.com" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-white hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg shadow-purple-500/50">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                E-mail
+              </a>
+            </div>
+          </div>
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-3xl rounded-full"></div>
+            <div class="relative rounded-2xl bg-white/10 backdrop-blur-md p-8 border border-white/20">
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="h-3 w-3 rounded-full bg-green-400"></div>
+                  <span class="text-gray-300">Disponível para projetos</span>
+                </div>
+                <div class="text-white text-lg font-semibold">CTO & Desenvolvedor Full Stack</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-white mb-4">Sobre Mim</h2>
+          <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="rounded-2xl bg-white/10 backdrop-blur-md p-8 border border-white/20">
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Atuo como <strong class="text-white">CTO e líder de desenvolvimento</strong> do sistema <strong class="text-white">Integrar Plus</strong>, uma plataforma voltada para clínicas terapêuticas que une tecnologia e cuidado humano. No projeto, conduzo toda a arquitetura técnica — do backend em Ruby on Rails ao frontend com Vue.js, Hotwire e Tailwind — além de gerenciar integrações com APIs como Google Calendar, Asaas e sistemas de operadoras de saúde.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+              Minha especialidade está em transformar ideias complexas em soluções funcionais, escaláveis e seguras. Tenho experiência sólida em DevOps (Docker, PostgreSQL, Sidekiq, Nginx, Cloudflare) e na criação de sistemas completos, com automação, análise de dados e interfaces modernas.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed">
+              Além do trabalho na área da saúde, desenvolvo projetos pessoais que refletem minha versatilidade e criatividade — desde sistemas imobiliários até marcas artesanais e projetos de lifestyle.
+            </p>
+            <p class="text-lg text-gray-300 leading-relaxed mt-6 italic">
+              Mais do que escrever código, acredito que tecnologia é uma forma de transformar realidades — e é isso que me move a cada novo projeto.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="py-20 scroll-mt-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-white mb-4">Habilidades Técnicas</h2>
+          <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+          <% ["Vue.js", "Ruby", "Ruby on Rails", "JavaScript", "Python", "Java"].each do |skill| %>
+            <div class="group relative rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 hover:border-purple-500/50 transition-all cursor-pointer">
+              <div class="text-center flex flex-col items-center gap-3">
+                <div class="flex items-center justify-center"><%= tech_icon(skill) %></div>
+                <div class="text-white font-semibold text-sm"><%= skill %></div>
+              </div>
+              <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+          <% end %>
+        </div>
+        <div class="mt-8 text-center">
+          <div class="inline-flex items-center gap-3 rounded-xl bg-white/10 backdrop-blur-md px-6 py-3 border border-white/20">
+            <%= tech_icon("Liderança") %>
+            <span class="text-white font-semibold">Liderança</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mentoria" class="py-20 scroll-mt-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-white mb-4">Mentoria</h2>
+          <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <div class="rounded-2xl bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-md p-8 border border-white/20">
+            <div class="text-center mb-6">
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Mentoria em Desenvolvimento</h3>
+              <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                Ofereço mentoria personalizada para desenvolvedores que desejam acelerar sua carreira. Com mais de cinco anos de experiência em desenvolvimento full stack e liderança técnica, posso ajudar você a:
+              </p>
+              <ul class="text-left text-gray-300 space-y-3 max-w-2xl mx-auto mb-8">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Dominar Ruby on Rails e Vue.js com projetos práticos</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Desenvolver habilidades de arquitetura de software e DevOps</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Transicionar para posições de liderança técnica</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 text-purple-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Construir projetos escaláveis e profissionais</span>
+                </li>
+              </ul>
+              <div class="flex flex-wrap gap-4 justify-center">
+                <a href="mailto:pedrodalbenmorais@gmail.com?subject=Mentoria em Desenvolvimento" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 text-white font-semibold hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg shadow-purple-500/50">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  Agendar uma conversa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-white mb-4">Experiência Profissional</h2>
+          <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+        </div>
+        <div class="max-w-4xl mx-auto space-y-6">
+          <% [
+            { role: "CTO", company: "Integrar Centro Terapeutico da Baixa Mogiana", period: "junho/2025", description: "Liderança técnica e desenvolvimento do sistema Integrar Plus" },
+            { role: "Desenvolvedor Full Stack", company: "Appolus Tecnologia", period: "junho/2024 a junho/2025", tech: "Vue.js/Rails" },
+            { role: "Líder Técnico", company: "Kazap Tecnologia", period: "jun/2022 a junho/2024" },
+            { role: "Desenvolvedor Full Stack", company: "Kazap Tecnologia", period: "out/2019 a jun/2022", tech: "Vue.js/Rails" },
+            { role: "Estagiário de Programação", company: "Phi Innovation", period: "set/2018 a fev/2019", tech: "Python, SQL, C, C++" }
+          ].each do |exp| %>
+            <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 hover:border-purple-500/50 transition-all">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
+                <div>
+                  <h3 class="text-xl font-bold text-white"><%= exp[:role] %></h3>
+                  <p class="text-purple-300 font-medium"><%= exp[:company] %></p>
+                </div>
+                <span class="text-gray-300 text-sm md:text-base"><%= exp[:period] %></span>
+              </div>
+              <% if exp[:tech] %>
+                <p class="text-gray-400 text-sm mt-2">Tecnologias: <%= exp[:tech] %></p>
+              <% end %>
+              <% if exp[:description] %>
+                <p class="text-gray-300 mt-2"><%= exp[:description] %></p>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+    <section id="hobbies" class="py-20 scroll-mt-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-white mb-4">Hobbies e Projetos Pessoais</h2>
+          <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+          <p class="text-gray-300 mt-6 text-lg">Projetos que refletem minha paixão por criar, inovar e transformar ideias em realidade</p>
+        </div>
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 hover:border-purple-500/50 transition-all hover:scale-105">
+            <div class="mb-4">
+              <h3 class="text-2xl font-bold text-white mb-2">O Segredo do Poder</h3>
+              <p class="text-purple-300 text-sm mb-4">Marca Artesanal de Molhos e Geleias</p>
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              Minha marca artesanal de molhos e geleias de pimenta, onde cada sabor representa uma emoção: <strong class="text-white">Equilíbrio, Paixão e Ardência</strong>. É um projeto que mistura gastronomia, identidade e propósito.
+            </p>
+            <div class="flex gap-2">
+              <a href="https://www.instagram.com/o.segredo.do.poder/?hl=af" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 text-sm font-medium text-white hover:from-purple-700 hover:to-pink-700 transition-all">
+                <%= social_icon("instagram") %>
+                Instagram
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 hover:border-purple-500/50 transition-all hover:scale-105">
+            <div class="mb-4">
+              <h3 class="text-2xl font-bold text-white mb-2">BigBangCraft</h3>
+              <p class="text-purple-300 text-sm mb-4">Servidor de Minecraft</p>
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              Meu servidor de Minecraft que combina criatividade, sobrevivência e lore própria. Um universo pós-apocalíptico onde clãs e reinos disputam território e poder, com <strong class="text-white">sistemas e plugins desenvolvidos por mim</strong>.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="https://github.com/BigBangcraft-server/Magnata" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-all">
+                <%= social_icon("github") %>
+                GitHub
+              </a>
+              <a href="https://discord.gg/wjpKU7zZrR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 text-sm font-medium text-white hover:from-purple-700 hover:to-pink-700 transition-all">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                </svg>
+                Discord
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 hover:border-purple-500/50 transition-all hover:scale-105">
+            <div class="mb-4">
+              <h3 class="text-2xl font-bold text-white mb-2">Conto do Pescador</h3>
+              <p class="text-purple-300 text-sm mb-4">Loja de Pesca e Lifestyle Outdoor</p>
+            </div>
+            <p class="text-gray-300 leading-relaxed mb-4">
+              Nasceu da minha paixão por pescarias, natureza e atividades ao ar livre. Mais do que vender equipamentos, representa um <strong class="text-white">estilo de vida</strong> — para quem acredita que as melhores ideias e lembranças nascem quando estamos em contato com o mundo lá fora.
+            </p>
+            <div class="flex gap-2">
+              <a href="https://www.instagram.com/ocontodopescador/?hl=af" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 text-sm font-medium text-white hover:from-purple-700 hover:to-pink-700 transition-all">
+                <%= social_icon("instagram") %>
+                Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <% if @featured_projects.any? %>
+      <section id="portfolio" class="py-20 scroll-mt-16">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">Projetos em Destaque</h2>
+            <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+          </div>
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <% @featured_projects.each do |project| %>
+              <div class="group rounded-xl bg-white/10 backdrop-blur-md overflow-hidden border border-white/20 hover:border-purple-500/50 transition-all hover:scale-105">
+                <% if project.image_url.present? %>
+                  <img src="<%= project.image_url %>" alt="<%= project.title %>" class="h-48 w-full object-cover">
+                <% end %>
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold text-white mb-2"><%= project.title %></h3>
+                  <p class="text-gray-300 line-clamp-3 mb-4"><%= project.description %></p>
+                  <div class="flex gap-2">
+                    <% if project.url.present? %>
+                      <%= link_to "Ver Projeto", project.url, target: "_blank", class: "rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 px-4 py-2 text-sm font-medium text-white hover:from-purple-700 hover:to-pink-700 transition-all" %>
+                    <% end %>
+                    <% if project.github_url.present? %>
+                      <%= link_to "GitHub", project.github_url, target: "_blank", class: "rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-all" %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </section>
+    <% end %>
+
+    <% if @recent_posts.any? %>
+      <section class="py-20 bg-white/5 backdrop-blur-sm">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-white mb-4">Últimos Posts</h2>
+            <div class="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto"></div>
+          </div>
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <% @recent_posts.each do |post| %>
+              <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 hover:border-purple-500/50 transition-all">
+                <h3 class="text-xl font-semibold text-white mb-2">
+                  <%= link_to post.title, blog_post_path(post.slug), class: "hover:text-purple-400 transition-colors" %>
+                </h3>
+                <% if post.excerpt.present? %>
+                  <p class="text-gray-300 mb-4"><%= post.excerpt %></p>
+                <% end %>
+                <p class="text-sm text-gray-400">
+                  <%= post.published_at&.strftime("%d/%m/%Y") %>
+                </p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </section>
+    <% end %>
+
+    <section id="contato" class="py-20 scroll-mt-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 p-12 text-center">
+          <h2 class="text-4xl font-bold text-white mb-4">Vamos trabalhar juntos?</h2>
+          <p class="text-xl text-white/90 mb-8">Estou sempre aberto a novos projetos e oportunidades</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <%= link_to "https://www.linkedin.com/in/pedrodalbendemorais", target: "_blank", rel: "noopener noreferrer", class: "inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-purple-600 font-semibold hover:bg-gray-100 transition-all" do %>
+              <%= social_icon("linkedin") %>
+              LinkedIn
+            <% end %>
+            <a href="mailto:pedrodalbenmorais@gmail.com" class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-purple-600 font-semibold hover:bg-gray-100 transition-all">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              E-mail
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-white/5 backdrop-blur-md py-8">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center text-gray-400">
+        <p>&copy; <%= Date.current.year %> Pedro Dalben. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</div>
