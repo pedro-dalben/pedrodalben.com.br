@@ -14,4 +14,56 @@ html {
   }
 }
 
+.theme-bg {
+  background: linear-gradient(to bottom right, rgb(0 0 0), rgb(30 27 75), rgb(15 23 42));
+}
+
+.theme-gradient {
+  background: linear-gradient(to right, rgb(79 70 229), rgb(99 102 241));
+}
+
+.theme-accent {
+  color: rgb(129 140 248);
+}
+
+.theme-text-gradient {
+  background: linear-gradient(to right, rgb(165 180 252), rgb(196 181 253));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.theme-border {
+  border-color: rgb(79 70 229);
+}
+
+.theme-divider {
+  background: linear-gradient(to right, rgb(79 70 229), rgb(99 102 241));
+}
+
+.theme-hover-border:hover {
+  border-color: rgb(79 70 229 / 0.5);
+}
+
+.theme-text-light {
+  color: rgb(165 180 252);
+}
+
+.theme-shadow {
+  box-shadow: 0 10px 15px -3px rgb(79 70 229 / 0.5), 0 4px 6px -4px rgb(79 70 229 / 0.5);
+}
+
+.theme-bg-glow {
+  background: linear-gradient(to right, rgb(79 70 229 / 0.2), rgb(99 102 241 / 0.2));
+}
+
+.theme-accent-hover:hover {
+  color: rgb(165 180 252);
+}
+
+.theme-accent-text {
+  color: rgb(79 70 229);
+}
+
+
 
