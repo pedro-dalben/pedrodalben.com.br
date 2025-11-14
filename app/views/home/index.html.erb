@@ -1,4 +1,4 @@
-<div class="min-h-screen theme-bg">
+<div class="min-h-screen theme-bg" data-controller="navigation">
   <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-md">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
@@ -6,14 +6,15 @@
           <a href="#inicio" class="text-xl font-bold text-white theme-accent-hover transition-colors cursor-pointer">Pedro Dalben</a>
         </div>
         <div class="flex items-center gap-6">
-          <a href="#sobre" class="text-gray-300 hover:text-white transition-colors">Sobre</a>
-          <a href="#habilidades" class="text-gray-300 hover:text-white transition-colors">Habilidades</a>
-          <a href="#mentoria" class="text-gray-300 hover:text-white transition-colors">Mentoria</a>
-          <a href="#experiencia" class="text-gray-300 hover:text-white transition-colors">Experiência</a>
-          <a href="#hobbies" class="text-gray-300 hover:text-white transition-colors">Hobbies</a>
-          <a href="#portfolio" class="text-gray-300 hover:text-white transition-colors">Portfólio</a>
+          <a href="#sobre" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Sobre</a>
+          <a href="#habilidades" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Habilidades</a>
+          <a href="#mentoria" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Mentoria</a>
+          <a href="#experiencia" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Experiência</a>
+          <a href="#hobbies" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Hobbies</a>
+          <a href="#portfolio" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Portfólio</a>
+          <a href="#contato" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Contato</a>
+          <div class="h-6 w-px bg-white/20"></div>
           <%= link_to "Blog", blog_path, class: "text-gray-300 hover:text-white transition-colors" %>
-          <a href="#contato" class="text-gray-300 hover:text-white transition-colors">Contato</a>
           <% if user_signed_in? %>
             <%= link_to "Admin", admin_dashboard_path, class: "rounded-lg theme-gradient px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-opacity" %>
           <% end %>
@@ -23,7 +24,7 @@
   </nav>
 
   <main class="pt-16">
-    <section id="inicio" class="relative overflow-hidden py-20 sm:py-32">
+    <section id="inicio" data-navigation-target="section" class="relative overflow-hidden py-20 sm:py-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div class="text-center lg:text-left">
@@ -64,7 +65,7 @@
       </div>
     </section>
 
-    <section id="sobre" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-16">
+    <section id="sobre" data-navigation-target="section" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Sobre Mim</h2>
@@ -89,7 +90,7 @@
       </div>
     </section>
 
-    <section id="habilidades" class="py-20 scroll-mt-16">
+    <section id="habilidades" data-navigation-target="section" class="py-20 scroll-mt-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Habilidades Técnicas</h2>
@@ -115,13 +116,13 @@
       </div>
     </section>
 
-    <section id="mentoria" class="py-20 scroll-mt-16">
+    <section id="mentoria" data-navigation-target="section" class="py-20 scroll-mt-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-white mb-4">Mentoria</h2>
+          <h2 class="text-4xl font-bold text-white mb-4">Mentoria e Consultoria</h2>
           <div class="h-1 w-24 theme-divider mx-auto"></div>
         </div>
-        <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           <div class="rounded-2xl theme-bg-glow backdrop-blur-md p-8 border border-white/20">
             <div class="text-center mb-6">
               <div class="inline-flex items-center justify-center w-16 h-16 rounded-full theme-gradient mb-4">
@@ -133,27 +134,27 @@
               <p class="text-lg text-gray-300 leading-relaxed mb-6">
                 Ofereço mentoria personalizada para desenvolvedores que desejam acelerar sua carreira. Com mais de cinco anos de experiência em desenvolvimento full stack e liderança técnica, posso ajudar você a:
               </p>
-              <ul class="text-left text-gray-300 space-y-3 max-w-2xl mx-auto mb-8">
+              <ul class="text-left text-gray-300 space-y-3 mb-8">
                 <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 theme-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
                   <span>Dominar Ruby on Rails e Vue.js com projetos práticos</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 theme-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
                   <span>Desenvolver habilidades de arquitetura de software e DevOps</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 theme-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
                   <span>Transicionar para posições de liderança técnica</span>
                 </li>
                 <li class="flex items-start gap-3">
-                  <svg class="w-6 h-6 theme-accent flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                   </svg>
                   <span>Construir projetos escaláveis e profissionais</span>
@@ -169,11 +170,65 @@
               </div>
             </div>
           </div>
+
+          <div class="rounded-2xl theme-bg-glow backdrop-blur-md p-8 border border-white/20">
+            <div class="text-center mb-6">
+              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full theme-gradient mb-4">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-white mb-4">Consultoria Técnica</h3>
+              <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                Ofereço consultoria especializada para empresas que buscam otimizar seus processos técnicos, arquitetar soluções escaláveis ou modernizar suas infraestruturas. Com experiência em liderança técnica e desenvolvimento de sistemas complexos, posso ajudar sua empresa a:
+              </p>
+              <ul class="text-left text-gray-300 space-y-3 mb-8">
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Arquitetar e planejar sistemas escaláveis e de alta performance</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Implementar e otimizar infraestrutura DevOps e CI/CD</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Integrar APIs e sistemas de terceiros de forma eficiente</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Revisar código e propor melhorias de qualidade e segurança</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <svg class="w-6 h-6 theme-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span>Treinar equipes e estabelecer boas práticas de desenvolvimento</span>
+                </li>
+              </ul>
+              <div class="flex flex-wrap gap-4 justify-center">
+                <a href="mailto:pedrodalbenmorais@gmail.com?subject=Consultoria Técnica" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-6 py-3 text-white font-semibold hover:opacity-90 transition-all theme-shadow">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  Solicitar proposta
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="experiencia" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-16">
+    <section id="experiencia" data-navigation-target="section" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Experiência Profissional</h2>
@@ -207,7 +262,7 @@
       </div>
     </section>
 
-    <section id="hobbies" class="py-20 scroll-mt-16">
+    <section id="hobbies" data-navigation-target="section" class="py-20 scroll-mt-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Hobbies e Projetos Pessoais</h2>
@@ -273,7 +328,7 @@
     </section>
 
     <% if @featured_projects.any? %>
-      <section id="portfolio" class="py-20 scroll-mt-16">
+      <section id="portfolio" data-navigation-target="section" class="py-20 scroll-mt-16">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="text-center mb-16">
             <h2 class="text-4xl font-bold text-white mb-4">Projetos em Destaque</h2>
@@ -330,7 +385,7 @@
       </section>
     <% end %>
 
-    <section id="contato" class="py-20 scroll-mt-16">
+    <section id="contato" data-navigation-target="section" class="py-20 scroll-mt-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="rounded-2xl theme-gradient p-12 text-center">
           <h2 class="text-4xl font-bold text-white mb-4">Vamos trabalhar juntos?</h2>
@@ -354,7 +409,42 @@
 
   <footer class="border-t border-white/10 bg-white/5 backdrop-blur-md py-8">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="text-center text-gray-400">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h3 class="text-white font-semibold mb-4">Navegação</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#sobre" class="hover:text-white transition-colors">Sobre</a></li>
+            <li><a href="#habilidades" class="hover:text-white transition-colors">Habilidades</a></li>
+            <li><a href="#portfolio" class="hover:text-white transition-colors">Portfólio</a></li>
+            <li><a href="#contato" class="hover:text-white transition-colors">Contato</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-4">Blog</h3>
+          <p class="text-gray-400 mb-4">Artigos sobre desenvolvimento, tecnologia e carreira</p>
+          <%= link_to "Ver todos os posts", blog_path, class: "theme-accent hover:opacity-80 transition-colors inline-flex items-center gap-2" %>
+        </div>
+        <div>
+          <h3 class="text-white font-semibold mb-4">Contato</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li>
+              <a href="mailto:pedrodalbenmorais@gmail.com" class="hover:text-white transition-colors inline-flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                E-mail
+              </a>
+            </li>
+            <li>
+              <%= link_to "https://www.linkedin.com/in/pedrodalbendemorais", target: "_blank", rel: "noopener noreferrer", class: "hover:text-white transition-colors inline-flex items-center gap-2" do %>
+                <%= social_icon("linkedin") %>
+                LinkedIn
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 text-center text-gray-400">
         <p>&copy; <%= Date.current.year %> Pedro Dalben. Todos os direitos reservados.</p>
       </div>
     </div>
