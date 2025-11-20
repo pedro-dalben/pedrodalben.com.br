@@ -1,5 +1,8 @@
 import "../javascript/theme.js";
 import "../javascript/application";
-import "alpinejs";
+import Alpine from "alpinejs";
+
+window.Alpine = Alpine;
+Alpine.start();
 
 

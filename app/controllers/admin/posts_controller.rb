@@ -16,7 +16,7 @@ class Admin::PostsController < Admin::BaseController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to admin_post_path(@post), notice: "Post criado com sucesso"
+      redirect_to admin_posts_path, notice: "Post criado com sucesso"
     else
       render :new, status: :unprocessable_entity
     end
@@ -27,7 +27,7 @@ class Admin::PostsController < Admin::BaseController
 
   def update
     if @post.update(post_params)
-      redirect_to admin_post_path(@post), notice: "Post atualizado com sucesso"
+      redirect_to admin_posts_path, notice: "Post atualizado com sucesso"
     else
       render :edit, status: :unprocessable_entity
     end

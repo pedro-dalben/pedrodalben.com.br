@@ -15,7 +15,8 @@
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.16",
-    "alpinejs": "^3.14.1"
+    "alpinejs": "^3.14.1",
+    "easymde": "^2.20.0"
   }
 }
 

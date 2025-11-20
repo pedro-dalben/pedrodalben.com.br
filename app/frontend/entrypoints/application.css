@@ -8,6 +8,22 @@ html {
   scroll-behavior: smooth;
 }
 
+html.dark {
+  color-scheme: dark;
+}
+
+/* Estilos específicos para o layout admin */
+html.dark aside.sidebar,
+html.dark .sidebar {
+  background-color: rgb(0, 0, 0) !important;
+  border-color: rgb(31 41 55) !important;
+}
+
+html.dark header.sticky.top-0 {
+  background-color: rgb(17 24 39) !important;
+  border-color: rgb(31 41 55) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -63,6 +79,289 @@ html {
 
 .theme-accent-text {
   color: rgb(79 70 229);
+}
+
+.EasyMDEContainer {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid rgb(229 231 235);
+}
+
+.dark .EasyMDEContainer {
+  border-color: rgb(55 65 81);
+}
+
+.EasyMDEContainer .editor-toolbar {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: none;
+  border-bottom: 1px solid rgb(229 231 235);
+  background-color: rgb(249 250 251);
+  padding: 0.5rem;
+}
+
+.dark .EasyMDEContainer .editor-toolbar,
+html.dark .EasyMDEContainer .editor-toolbar {
+  border-bottom-color: rgb(55 65 81);
+  background-color: rgb(17 24 39) !important;
+}
+
+.EasyMDEContainer .editor-toolbar button {
+  color: rgb(107 114 128);
+  border: none;
+  background: transparent;
+}
+
+.dark .EasyMDEContainer .editor-toolbar button,
+html.dark .EasyMDEContainer .editor-toolbar button {
+  color: rgb(156 163 175) !important;
+}
+
+.EasyMDEContainer .editor-toolbar button:hover,
+.EasyMDEContainer .editor-toolbar button.active {
+  background-color: rgb(229 231 235);
+  color: rgb(17 24 39);
+  border: none;
+}
+
+.dark .EasyMDEContainer .editor-toolbar button:hover,
+.dark .EasyMDEContainer .editor-toolbar button.active,
+html.dark .EasyMDEContainer .editor-toolbar button:hover,
+html.dark .EasyMDEContainer .editor-toolbar button.active {
+  background-color: rgb(55 65 81) !important;
+  color: rgb(243 244 246) !important;
+}
+
+.EasyMDEContainer .CodeMirror {
+  border: none;
+  background-color: white !important;
+  color: rgb(17 24 39) !important;
+  min-height: 400px;
+}
+
+.dark .EasyMDEContainer .CodeMirror,
+html.dark .EasyMDEContainer .CodeMirror {
+  background-color: rgb(31 41 55) !important;
+  color: rgb(243 244 246) !important;
+}
+
+.dark .EasyMDEContainer .CodeMirror .CodeMirror-lines,
+html.dark .EasyMDEContainer .CodeMirror .CodeMirror-lines {
+  background-color: rgb(31 41 55) !important;
+  color: rgb(243 244 246) !important;
+}
+
+.dark .EasyMDEContainer .CodeMirror-cursor,
+html.dark .EasyMDEContainer .CodeMirror-cursor {
+  border-left-color: rgb(243 244 246) !important;
+}
+
+.dark .EasyMDEContainer .CodeMirror pre,
+html.dark .EasyMDEContainer .CodeMirror pre {
+  color: rgb(243 244 246) !important;
+}
+
+.dark .EasyMDEContainer .CodeMirror .CodeMirror-line,
+html.dark .EasyMDEContainer .CodeMirror .CodeMirror-line {
+  color: rgb(243 244 246) !important;
+}
+
+.EasyMDEContainer .CodeMirror-selected {
+  background-color: rgb(219 234 254);
+}
+
+.dark .EasyMDEContainer .CodeMirror-selected {
+  background-color: rgb(55 65 81);
+}
+
+.EasyMDEContainer .editor-preview {
+  background-color: white;
+  padding: 1rem;
+  color: rgb(17 24 39);
+}
+
+.dark .EasyMDEContainer .editor-preview {
+  background-color: rgb(17 24 39);
+  color: rgb(243 244 246);
+}
+
+.EasyMDEContainer .editor-preview-side {
+  background-color: white;
+  border-left: 1px solid rgb(229 231 235);
+}
+
+.dark .EasyMDEContainer .editor-preview-side {
+  background-color: rgb(17 24 39);
+  border-left-color: rgb(55 65 81);
+}
+
+.EasyMDEContainer .editor-statusbar {
+  border-top: 1px solid rgb(229 231 235);
+  background-color: rgb(249 250 251);
+  color: rgb(107 114 128);
+}
+
+.dark .EasyMDEContainer .editor-statusbar {
+  border-top-color: rgb(55 65 81);
+  background-color: rgb(17 24 39);
+  color: rgb(156 163 175);
+}
+
+.EasyMDEContainer .CodeMirror .color-syntax-hidden,
+.EasyMDEContainer .CodeMirror .cm-color-syntax-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  overflow: hidden !important;
+}
+
+.EasyMDEContainer .CodeMirror .CodeMirror-lines .color-syntax-hidden {
+  display: none !important;
+}
+
+.EasyMDEContainer .CodeMirror .color-syntax-text {
+  font-weight: 500;
+}
+
+.EasyMDEContainer .CodeMirror .color-syntax-bg {
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.prose h1 {
+  font-size: 2.25em;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0.8888889em;
+}
+
+.prose h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+}
+
+.prose h4 {
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose h5 {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+}
+
+.prose h6 {
+  font-size: 0.875em;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose a {
+  text-decoration: underline;
+}
+
+.prose code {
+  font-size: 0.875em;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+}
+
+.prose pre {
+  padding: 1em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+.prose blockquote {
+  border-left-width: 0.25rem;
+  padding-left: 1em;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+}
+
+.prose ul,
+.prose ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-left: 1.625em;
+}
+
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.prose img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.color-picker {
+  position: absolute !important;
+  z-index: 10000 !important;
+}
+
+.dark .color-picker,
+html.dark .color-picker {
+  background: rgb(31 41 55) !important;
+  border-color: rgb(55 65 81) !important;
+}
+
+.dark .color-picker > div:first-child,
+html.dark .color-picker > div:first-child {
+  color: rgb(243 244 246) !important;
+}
+
+.dark .color-picker button[type="button"]:not([style*="background"]),
+html.dark .color-picker button[type="button"]:not([style*="background"]) {
+  background: rgb(55 65 81) !important;
+  border-color: rgb(75 85 99) !important;
+  color: rgb(243 244 246) !important;
+}
+
+.prose span[style*="color"] {
+  display: inline;
+}
+
+.prose span[style*="background-color"] {
+  display: inline;
+  padding: 0.1em 0.2em;
+  border-radius: 0.25rem;
 }
 
 

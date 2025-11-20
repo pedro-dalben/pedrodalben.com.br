@@ -1,0 +1,39 @@
+<div class="mb-6">
+  <h2 class="text-2xl font-bold text-gray-900 dark:text-white">Criar Conta</h2>
+  <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Crie uma nova conta administrativa</p>
+</div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-5" }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div>
+    <%= f.label :name, "Nome", class: "mb-2 block text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= f.text_field :name, autofocus: true, class: "w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= f.label :email, class: "mb-2 block text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= f.email_field :email, autocomplete: "email", class: "w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= f.label :password, "Senha", class: "mb-2 block text-sm font-medium text-gray-900 dark:text-white" %>
+    <% if @minimum_password_length %>
+      <p class="mb-2 text-xs text-gray-500 dark:text-gray-400">(<%= @minimum_password_length %> caracteres no mínimo)</p>
+    <% end %>
+    <%= f.password_field :password, autocomplete: "new-password", class: "w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation, "Confirmar Senha", class: "mb-2 block text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-800 dark:text-white dark:placeholder:text-gray-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <div>
+    <%= f.submit "Criar Conta", class: "w-full rounded-lg bg-blue-600 px-4 py-3 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900" %>
+  </div>
+<% end %>
+
+<div class="mt-6 text-center">
+  <%= render "devise/shared/links" %>
+</div>

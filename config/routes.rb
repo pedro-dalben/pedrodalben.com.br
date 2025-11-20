@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
 
   root "home#index"
 
@@ -14,6 +18,7 @@ Rails.application.routes.draw do
     resources :projects
     resources :posts
     resources :clients
+    post "images", to: "images#create"
   end
 
   get "up" => "rails/health#show", as: :rails_health_check
