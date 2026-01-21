@@ -1,18 +1,18 @@
 <div class="min-h-screen theme-bg" data-controller="navigation">
-  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-white/5 backdrop-blur-md">
+  <nav class="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-white/5 backdrop-blur-md transition-all duration-300">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-16 items-center justify-between">
         <div class="flex items-center">
           <a href="#inicio" class="text-xl font-bold text-white theme-accent-hover transition-colors cursor-pointer">Pedro Dalben</a>
         </div>
         <div class="flex items-center gap-6">
-          <a href="#sobre" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Sobre</a>
-          <a href="#habilidades" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Habilidades</a>
-          <a href="#mentoria" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Mentoria</a>
-          <a href="#experiencia" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Experiência</a>
-          <a href="#hobbies" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Hobbies</a>
-          <a href="#portfolio" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Portfólio</a>
-          <a href="#contato" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors">Contato</a>
+          <a href="#sobre" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors theme-focus-ring">Sobre</a>
+          <a href="#habilidades" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors theme-focus-ring">Habilidades</a>
+          <a href="#mentoria" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors theme-focus-ring">Mentoria</a>
+          <a href="#experiencia" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors theme-focus-ring">Experiência</a>
+          <a href="#hobbies" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors theme-focus-ring">Hobbies</a>
+          <a href="#portfolio" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors theme-focus-ring">Portfólio</a>
+          <a href="#contato" data-navigation-target="link" class="text-gray-300 hover:text-white transition-colors theme-focus-ring">Contato</a>
           <div class="h-6 w-px bg-white/20"></div>
           <%= link_to "Blog", blog_path, class: "text-gray-300 hover:text-white transition-colors" %>
           <% if user_signed_in? %>
@@ -23,8 +23,8 @@
     </div>
   </nav>
 
-  <main class="pt-16">
-    <section id="inicio" data-navigation-target="section" class="relative overflow-hidden py-20 sm:py-32">
+  <main class="pt-20">
+    <section id="inicio" data-navigation-target="section" class="relative overflow-hidden min-h-screen flex items-center scroll-mt-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div class="text-center lg:text-left">
@@ -37,11 +37,17 @@
               Desenvolvedor e arquiteto de software com mais de cinco anos de experiência, apaixonado por criar soluções tecnológicas que realmente fazem a diferença.
             </p>
             <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <%= link_to "https://www.linkedin.com/in/pedrodalbendemorais", target: "_blank", rel: "noopener noreferrer", class: "inline-flex items-center gap-2 rounded-lg bg-white/10 px-6 py-3 text-white backdrop-blur-sm hover:bg-white/20 transition-all border border-white/20" do %>
+              <a href="#contato" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-8 py-3 text-white font-semibold hover:opacity-90 transition-all theme-shadow theme-focus-ring">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                </svg>
+                Contrate-me
+              </a>
+              <%= link_to "https://www.linkedin.com/in/pedrodalbendemorais", target: "_blank", rel: "noopener noreferrer", class: "inline-flex items-center gap-2 rounded-lg bg-white/10 px-6 py-3 text-white backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all border border-white/20 theme-focus-ring" do %>
                 <%= social_icon("linkedin") %>
                 LinkedIn
               <% end %>
-              <a href="mailto:pedrodalbenmorais@gmail.com" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-6 py-3 text-white hover:opacity-90 transition-all theme-shadow">
+              <a href="mailto:pedrodalbenmorais@gmail.com" class="inline-flex items-center gap-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 text-white hover:bg-white/20 hover:scale-105 transition-all theme-focus-ring">
                 <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                 </svg>
@@ -65,7 +71,7 @@
       </div>
     </section>
 
-    <section id="sobre" data-navigation-target="section" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-16">
+    <section id="sobre" data-navigation-target="section" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Sobre Mim</h2>
@@ -73,24 +79,43 @@
         </div>
         <div class="max-w-4xl mx-auto">
           <div class="rounded-2xl bg-white/10 backdrop-blur-md p-8 border border-white/20">
-            <p class="text-lg text-gray-300 leading-relaxed mb-6">
-              Atuo como <strong class="text-white">CTO e líder de desenvolvimento</strong> do sistema <strong class="text-white">Integrar Plus</strong>, uma plataforma voltada para clínicas terapêuticas que une tecnologia e cuidado humano. No projeto, conduzo toda a arquitetura técnica — do backend em Ruby on Rails ao frontend com Vue.js, Hotwire e Tailwind — além de gerenciar integrações com APIs como Google Calendar, Asaas e sistemas de operadoras de saúde.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed mb-6">
-              Minha especialidade está em transformar ideias complexas em soluções funcionais, escaláveis e seguras. Tenho experiência sólida em DevOps (Docker, PostgreSQL, Sidekiq, Nginx, Cloudflare) e na criação de sistemas completos, com automação, análise de dados e interfaces modernas.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed">
-              Além do trabalho na área da saúde, desenvolvo projetos pessoais que refletem minha versatilidade e criatividade — desde sistemas imobiliários até marcas artesanais e projetos de lifestyle.
-            </p>
-            <p class="text-lg text-gray-300 leading-relaxed mt-6 italic">
-              Mais do que escrever código, acredito que tecnologia é uma forma de transformar realidades — e é isso que me move a cada novo projeto.
-            </p>
+            <div class="prose prose-lg prose-invert max-w-none">
+              <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                Atuo como <strong class="text-white">CTO e líder de desenvolvimento</strong> do sistema <strong class="text-white">Integrar Plus</strong>, uma plataforma inovadora que conecta clínicas terapêuticas com tecnologia avançada para otimizar o cuidado aos pacientes.
+              </p>
+
+              <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                <strong class="text-white">Arquitetura técnica completa:</strong> Gerencio toda a stack tecnológica, desde o backend robusto em Ruby on Rails até interfaces modernas com Vue.js, Hotwire e Tailwind CSS.
+              </p>
+
+              <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                <strong class="text-white">Integrações avançadas:</strong> Implemento conexões com APIs estratégicas como Google Calendar, Asaas (pagamentos) e sistemas de operadoras de saúde, garantindo fluxos eficientes e seguros.
+              </p>
+
+              <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                <strong class="text-white">Especialidade em soluções escaláveis:</strong> Transformo ideias complexas em sistemas funcionais, seguros e de alta performance, com expertise em DevOps (Docker, PostgreSQL, Sidekiq, Nginx, Cloudflare).
+              </p>
+
+              <p class="text-lg text-gray-300 leading-relaxed mb-4">
+                <strong class="text-white">Análise de dados e automação:</strong> Desenvolvimento de dashboards inteligentes, relatórios automatizados e processos que otimizam operações e decisões estratégicas.
+              </p>
+
+              <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                <strong class="text-white">Projetos diversificados:</strong> Além da saúde, aplico minha expertise em sistemas imobiliários, marcas artesanais e projetos de lifestyle, demonstrando versatilidade e criatividade técnica.
+              </p>
+            </div>
+
+            <blockquote class="border-l-4 border-theme-accent pl-6 italic text-gray-300">
+              <p class="text-lg">
+                Mais do que escrever código, acredito que tecnologia é uma ferramenta poderosa para transformar realidades e criar impacto positivo na sociedade.
+              </p>
+            </blockquote>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="habilidades" data-navigation-target="section" class="py-20 scroll-mt-16">
+    <section id="habilidades" data-navigation-target="section" class="py-20 scroll-mt-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Habilidades Técnicas</h2>
@@ -116,7 +141,7 @@
       </div>
     </section>
 
-    <section id="mentoria" data-navigation-target="section" class="py-20 scroll-mt-16">
+    <section id="mentoria" data-navigation-target="section" class="py-20 scroll-mt-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Mentoria e Consultoria</h2>
@@ -124,15 +149,18 @@
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           <div class="rounded-2xl theme-bg-glow backdrop-blur-md p-8 border border-white/20">
-            <div class="text-center mb-6">
-              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full theme-gradient mb-4">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-4">Mentoria em Desenvolvimento</h3>
+              <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full theme-gradient mb-4">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4" id="mentoria-desenvolvimento">Mentoria em Desenvolvimento</h3>
+              <p class="text-lg text-theme-text-secondary font-medium mb-4">
+                Acelere sua carreira com mentoria personalizada focada em desenvolvimento full stack, arquitetura de software e liderança técnica.
+              </p>
               <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                Ofereço mentoria personalizada para desenvolvedores que desejam acelerar sua carreira. Com mais de cinco anos de experiência em desenvolvimento full stack e liderança técnica, posso ajudar você a:
+                Com mais de cinco anos de experiência prática, posso ajudar você a dominar tecnologias modernas e alcançar posições de destaque na área tech:
               </p>
               <ul class="text-left text-gray-300 space-y-3 mb-8">
                 <li class="flex items-start gap-3">
@@ -172,15 +200,18 @@
           </div>
 
           <div class="rounded-2xl theme-bg-glow backdrop-blur-md p-8 border border-white/20">
-            <div class="text-center mb-6">
-              <div class="inline-flex items-center justify-center w-16 h-16 rounded-full theme-gradient mb-4">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                </svg>
-              </div>
-              <h3 class="text-2xl font-bold text-white mb-4">Consultoria Técnica</h3>
+              <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full theme-gradient mb-4">
+                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                  </svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4" id="consultoria-tecnica">Consultoria Técnica</h3>
+              <p class="text-lg text-theme-text-secondary font-medium mb-4">
+                Otimize processos técnicos, arquitete soluções escaláveis e modernize infraestruturas com consultoria especializada em tecnologia.
+              </p>
               <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                Ofereço consultoria especializada para empresas que buscam otimizar seus processos técnicos, arquitetar soluções escaláveis ou modernizar suas infraestruturas. Com experiência em liderança técnica e desenvolvimento de sistemas complexos, posso ajudar sua empresa a:
+                Com expertise em liderança técnica e desenvolvimento de sistemas complexos, ajudo empresas a alcançarem excelência operacional e competitiva através de:
               </p>
               <ul class="text-left text-gray-300 space-y-3 mb-8">
                 <li class="flex items-start gap-3">
@@ -228,13 +259,13 @@
       </div>
     </section>
 
-    <section id="experiencia" data-navigation-target="section" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-16">
+    <section id="experiencia" data-navigation-target="section" class="py-20 bg-white/5 backdrop-blur-sm scroll-mt-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Experiência Profissional</h2>
           <div class="h-1 w-24 theme-divider mx-auto"></div>
         </div>
-        <div class="max-w-4xl mx-auto space-y-6">
+        <div class="max-w-4xl mx-auto space-y-4 sm:space-y-6">
           <% [
             { role: "CTO", company: "Integrar Centro Terapeutico da Baixa Mogiana", period: "junho/2025", description: "Liderança técnica e desenvolvimento do sistema Integrar Plus" },
             { role: "Desenvolvedor Full Stack", company: "Appolus Tecnologia", period: "junho/2024 a junho/2025", tech: "Vue.js/Rails" },
@@ -242,19 +273,19 @@
             { role: "Desenvolvedor Full Stack", company: "Kazap Tecnologia", period: "out/2019 a jun/2022", tech: "Vue.js/Rails" },
             { role: "Estagiário de Programação", company: "Phi Innovation", period: "set/2018 a fev/2019", tech: "Python, SQL, C, C++" }
           ].each do |exp| %>
-            <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 theme-hover-border transition-all">
-              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
-                <div>
-                  <h3 class="text-xl font-bold text-white"><%= exp[:role] %></h3>
-                  <p class="theme-text-light font-medium"><%= exp[:company] %></p>
+            <div class="rounded-xl bg-white/10 backdrop-blur-md p-4 sm:p-6 border border-white/20 theme-hover-border transition-all">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+                <div class="flex-1">
+                  <h3 class="text-lg sm:text-xl font-bold text-white mb-1"><%= exp[:role] %></h3>
+                  <p class="theme-text-light font-medium text-sm sm:text-base"><%= exp[:company] %></p>
                 </div>
-                <span class="text-gray-300 text-sm md:text-base"><%= exp[:period] %></span>
+                <span class="text-gray-300 text-xs sm:text-sm md:text-base shrink-0"><%= exp[:period] %></span>
               </div>
               <% if exp[:tech] %>
-                <p class="text-gray-400 text-sm mt-2">Tecnologias: <%= exp[:tech] %></p>
+                <p class="text-gray-400 text-xs sm:text-sm mt-2">Tecnologias: <%= exp[:tech] %></p>
               <% end %>
               <% if exp[:description] %>
-                <p class="text-gray-300 mt-2"><%= exp[:description] %></p>
+                <p class="text-gray-300 mt-2 text-sm sm:text-base leading-relaxed"><%= exp[:description] %></p>
               <% end %>
             </div>
           <% end %>
@@ -262,44 +293,44 @@
       </div>
     </section>
 
-    <section id="hobbies" data-navigation-target="section" class="py-20 scroll-mt-16">
+    <section id="hobbies" data-navigation-target="section" class="py-20 scroll-mt-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-white mb-4">Hobbies e Projetos Pessoais</h2>
           <div class="h-1 w-24 theme-divider mx-auto"></div>
           <p class="text-gray-300 mt-6 text-lg">Projetos que refletem minha paixão por criar, inovar e transformar ideias em realidade</p>
         </div>
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 theme-hover-border transition-all hover:scale-105">
+        <div class="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-xl bg-white/10 backdrop-blur-md p-4 sm:p-6 border border-white/20 theme-hover-border transition-all hover:scale-105">
             <div class="mb-4">
-              <h3 class="text-2xl font-bold text-white mb-2">O Segredo do Poder</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">O Segredo do Poder</h3>
               <p class="theme-text-light text-sm mb-4">Marca Artesanal de Molhos e Geleias</p>
             </div>
-            <p class="text-gray-300 leading-relaxed mb-4">
+            <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
               Minha marca artesanal de molhos e geleias de pimenta, onde cada sabor representa uma emoção: <strong class="text-white">Equilíbrio, Paixão e Ardência</strong>. É um projeto que mistura gastronomia, identidade e propósito.
             </p>
             <div class="flex gap-2">
-              <a href="https://www.instagram.com/o.segredo.do.poder/?hl=af" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all">
+              <a href="https://www.instagram.com/o.segredo.do.poder/?hl=af" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-3 sm:px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all theme-focus-ring">
                 <%= social_icon("instagram") %>
                 Instagram
               </a>
             </div>
           </div>
 
-          <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 theme-hover-border transition-all hover:scale-105">
+          <div class="rounded-xl bg-white/10 backdrop-blur-md p-4 sm:p-6 border border-white/20 theme-hover-border transition-all hover:scale-105">
             <div class="mb-4">
-              <h3 class="text-2xl font-bold text-white mb-2">BigBangCraft</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">BigBangCraft</h3>
               <p class="theme-text-light text-sm mb-4">Servidor de Minecraft</p>
             </div>
-            <p class="text-gray-300 leading-relaxed mb-4">
+            <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
               Meu servidor de Minecraft que combina criatividade, sobrevivência e lore própria. Um universo pós-apocalíptico onde clãs e reinos disputam território e poder, com <strong class="text-white">sistemas e plugins desenvolvidos por mim</strong>.
             </p>
             <div class="flex flex-wrap gap-2">
-              <a href="https://github.com/BigBangcraft-server/Magnata" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-all">
+              <a href="https://github.com/BigBangcraft-server/Magnata" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-white/20 px-3 sm:px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-all theme-focus-ring">
                 <%= social_icon("github") %>
                 GitHub
               </a>
-              <a href="https://discord.gg/wjpKU7zZrR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all">
+              <a href="https://discord.gg/wjpKU7zZrR" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-3 sm:px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all theme-focus-ring">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
                 </svg>
@@ -308,16 +339,16 @@
             </div>
           </div>
 
-          <div class="rounded-xl bg-white/10 backdrop-blur-md p-6 border border-white/20 theme-hover-border transition-all hover:scale-105">
+          <div class="rounded-xl bg-white/10 backdrop-blur-md p-4 sm:p-6 border border-white/20 theme-hover-border transition-all hover:scale-105">
             <div class="mb-4">
-              <h3 class="text-2xl font-bold text-white mb-2">Conto do Pescador</h3>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mb-2">Conto do Pescador</h3>
               <p class="theme-text-light text-sm mb-4">Loja de Pesca e Lifestyle Outdoor</p>
             </div>
-            <p class="text-gray-300 leading-relaxed mb-4">
+            <p class="text-gray-300 leading-relaxed mb-4 text-sm sm:text-base">
               Nasceu da minha paixão por pescarias, natureza e atividades ao ar livre. Mais do que vender equipamentos, representa um <strong class="text-white">estilo de vida</strong> — para quem acredita que as melhores ideias e lembranças nascem quando estamos em contato com o mundo lá fora.
             </p>
             <div class="flex gap-2">
-              <a href="https://www.instagram.com/ocontodopescador/?hl=af" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all">
+              <a href="https://www.instagram.com/ocontodopescador/?hl=af" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg theme-gradient px-3 sm:px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all theme-focus-ring">
                 <%= social_icon("instagram") %>
                 Instagram
               </a>
@@ -336,19 +367,28 @@
           </div>
           <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <% @featured_projects.each do |project| %>
-              <div class="group rounded-xl bg-white/10 backdrop-blur-md overflow-hidden border border-white/20 theme-hover-border transition-all hover:scale-105">
+              <div class="group rounded-xl bg-white/10 backdrop-blur-md overflow-hidden border border-white/20 theme-hover-border transition-all hover:scale-105 h-full flex flex-col">
                 <% if project.image_url.present? %>
-                  <img src="<%= project.image_url %>" alt="<%= project.title %>" class="h-48 w-full object-cover">
+                  <img src="<%= project.image_url %>" alt="Captura de tela do projeto <%= project.title %>" class="h-48 w-full object-cover">
+                <% else %>
+                  <div class="h-48 w-full bg-linear-to-br from-theme-accent/20 to-theme-accent/10 flex items-center justify-center">
+                    <svg class="w-16 h-16 text-theme-accent/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                    </svg>
+                  </div>
                 <% end %>
-                <div class="p-6">
+                <div class="p-6 flex-1 flex flex-col">
                   <h3 class="text-xl font-semibold text-white mb-2"><%= project.title %></h3>
-                  <p class="text-gray-300 line-clamp-3 mb-4"><%= project.description %></p>
-                  <div class="flex gap-2">
+                  <p class="text-gray-300 line-clamp-3 mb-6 flex-1"><%= project.description %></p>
+                  <div class="flex flex-wrap gap-3 mt-auto">
                     <% if project.url.present? %>
-                      <%= link_to "Ver Projeto", project.url, target: "_blank", class: "rounded-lg theme-gradient px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all" %>
+                      <%= link_to "Ver Projeto", project.url, target: "_blank", class: "inline-flex items-center gap-2 rounded-lg theme-gradient px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition-all theme-focus-ring" %>
                     <% end %>
                     <% if project.github_url.present? %>
-                      <%= link_to "GitHub", project.github_url, target: "_blank", class: "rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-all" %>
+                      <%= link_to project.github_url, target: "_blank", class: "inline-flex items-center gap-2 rounded-lg border border-white/20 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition-all theme-focus-ring" do %>
+                        <%= social_icon("github") %>
+                        GitHub
+                      <% end %>
                     <% end %>
                   </div>
                 </div>
@@ -385,22 +425,48 @@
       </section>
     <% end %>
 
-    <section id="contato" data-navigation-target="section" class="py-20 scroll-mt-16">
+    <section id="contato" data-navigation-target="section" class="py-20 scroll-mt-20">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="rounded-2xl theme-gradient p-12 text-center">
-          <h2 class="text-4xl font-bold text-white mb-4">Vamos trabalhar juntos?</h2>
-          <p class="text-xl text-white/90 mb-8">Estou sempre aberto a novos projetos e oportunidades</p>
-          <div class="flex flex-wrap gap-4 justify-center">
-            <%= link_to "https://www.linkedin.com/in/pedrodalbendemorais", target: "_blank", rel: "noopener noreferrer", class: "inline-flex items-center gap-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 text-white font-semibold hover:bg-white/20 transition-all" do %>
-              <%= social_icon("linkedin") %>
-              LinkedIn
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div class="rounded-2xl theme-gradient p-8 sm:p-12 text-center lg:text-left">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Vamos trabalhar juntos?</h2>
+            <p class="text-lg sm:text-xl text-white/90 mb-8">Estou sempre aberto a novos projetos e oportunidades</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <%= link_to "https://www.linkedin.com/in/pedrodalbendemorais", target: "_blank", rel: "noopener noreferrer", class: "inline-flex items-center gap-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 text-white font-semibold hover:bg-white/20 transition-all theme-focus-ring" do %>
+                <%= social_icon("linkedin") %>
+                LinkedIn
+              <% end %>
+              <a href="mailto:pedrodalbenmorais@gmail.com" class="inline-flex items-center gap-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 text-white font-semibold hover:bg-white/20 transition-all theme-focus-ring">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                E-mail
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-2xl bg-white/10 backdrop-blur-md p-8 border border-white/20">
+            <h3 class="text-2xl font-bold text-white mb-6 text-center">Envie uma mensagem</h3>
+            <%= form_with url: contact_path, method: :post, class: "space-y-6" do |f| %>
+              <div>
+                <%= f.label :name, "Nome", class: "block text-sm font-medium text-white mb-2" %>
+                <%= f.text_field :name, required: true, class: "w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-theme-accent focus:border-transparent theme-focus-ring", placeholder: "Seu nome" %>
+              </div>
+
+              <div>
+                <%= f.label :email, "E-mail", class: "block text-sm font-medium text-white mb-2" %>
+                <%= f.email_field :email, required: true, class: "w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-theme-accent focus:border-transparent theme-focus-ring", placeholder: "seu@email.com" %>
+              </div>
+
+              <div>
+                <%= f.label :message, "Mensagem", class: "block text-sm font-medium text-white mb-2" %>
+                <%= f.text_area :message, required: true, rows: 5, class: "w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-theme-accent focus:border-transparent theme-focus-ring resize-none", placeholder: "Conte-me sobre seu projeto..." %>
+              </div>
+
+              <div class="text-center">
+                <%= f.submit "Enviar Mensagem", class: "inline-flex items-center gap-2 rounded-lg theme-gradient px-8 py-3 text-white font-semibold hover:opacity-90 transition-all theme-shadow theme-focus-ring" %>
+              </div>
             <% end %>
-            <a href="mailto:pedrodalbenmorais@gmail.com" class="inline-flex items-center gap-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-3 text-white font-semibold hover:bg-white/20 transition-all">
-              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-              </svg>
-              E-mail
-            </a>
           </div>
         </div>
       </div>

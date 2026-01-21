@@ -65,6 +65,10 @@ html.dark header.sticky.top-0 {
   color: rgb(165 180 252);
 }
 
+.theme-text-secondary {
+  color: rgb(203 213 225);
+}
+
 .theme-shadow {
   box-shadow: 0 10px 15px -3px rgb(79 70 229 / 0.5), 0 4px 6px -4px rgb(79 70 229 / 0.5);
 }
@@ -79,6 +83,20 @@ html.dark header.sticky.top-0 {
 
 .theme-accent-text {
   color: rgb(79 70 229);
+}
+
+/* Estilos de foco para acessibilidade */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgb(129 140 248);
+  outline-offset: 2px;
+}
+
+.theme-focus-ring:focus-visible {
+  outline: 2px solid rgb(129 140 248);
+  outline-offset: 2px;
 }
 
 .EasyMDEContainer {

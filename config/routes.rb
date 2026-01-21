@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations',
-    passwords: 'users/passwords'
+    sessions: "users/sessions",
+    registrations: "users/registrations",
+    passwords: "users/passwords"
   }
 
   root "home#index"
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "portfolio/:id", to: "portfolio#show", as: :portfolio_project
   get "blog", to: "blog#index"
   get "blog/:slug", to: "blog#show", as: :blog_post
+  post "contact", to: "contact#create"
 
   namespace :admin do
     get "dashboard", to: "dashboard#index"
