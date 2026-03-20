@@ -1,0 +1,15 @@
+<div class="admin-documents-shell">
+  <header class="admin-documents-header">
+    <div>
+      <p class="admin-documents-kicker">Personal Document Studio</p>
+      <h1 class="admin-documents-title">Editar documento</h1>
+      <p class="admin-documents-subtitle">Ajuste o conteudo, revise o sumario e gere o PDF atualizado.</p>
+    </div>
+    <div class="admin-documents-header-actions">
+      <%= link_to "Download PDF", download_pdf_admin_document_path(@document), class: "admin-documents-button accent" %>
+      <%= link_to "Voltar", admin_documents_path, class: "admin-documents-button ghost" %>
+    </div>
+  </header>
+
+  <%= render "form", document: @document, submit_label: "Salvar alteracoes" %>
+</div>

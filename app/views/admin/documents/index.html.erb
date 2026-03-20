@@ -1,0 +1,50 @@
+<div class="admin-documents-shell">
+  <header class="admin-documents-header">
+    <div>
+      <p class="admin-documents-kicker">Biblioteca</p>
+      <h1 class="admin-documents-title">Documentos pessoais</h1>
+      <p class="admin-documents-subtitle">Organize seus documentos, revise o sumario e exporte PDFs com layout profissional.</p>
+    </div>
+    <div class="admin-documents-header-actions">
+      <%= link_to "Novo documento", new_admin_document_path, class: "admin-documents-button primary" %>
+    </div>
+  </header>
+
+  <% if @documents.any? %>
+    <div class="admin-documents-grid-list">
+      <% @documents.each do |document| %>
+        <div class="admin-documents-card">
+          <div class="admin-documents-card-header">
+            <div>
+              <p class="admin-documents-kicker">Atualizado em <%= document.updated_at.strftime('%d/%m/%Y') %></p>
+              <h2 class="admin-documents-section-title"><%= document.title %></h2>
+            </div>
+            <span class="admin-documents-status <%= document.published? ? 'published' : 'draft' %>">
+              <%= document.published? ? 'Publicado' : 'Rascunho' %>
+            </span>
+          </div>
+
+          <div class="admin-documents-meta">
+            <span>Criado em <%= document.created_at.strftime('%d/%m/%Y') %></span>
+            <span>Slug: <%= document.slug %></span>
+          </div>
+
+          <div class="admin-documents-card-actions">
+            <%= link_to "Editar", edit_admin_document_path(document), class: "admin-documents-button ghost" %>
+            <%= link_to "Abrir", admin_document_path(document), class: "admin-documents-button ghost" %>
+            <%= link_to "PDF", download_pdf_admin_document_path(document), class: "admin-documents-button accent" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="admin-documents-empty">
+      <div>
+        <p class="admin-documents-kicker">Ainda nao ha documentos</p>
+        <h2 class="admin-documents-section-title">Crie o primeiro documento</h2>
+        <p class="admin-documents-subtitle">Organize informacoes e gere PDFs profissionais em poucos minutos.</p>
+      </div>
+      <%= link_to "Criar documento", new_admin_document_path, class: "admin-documents-button primary" %>
+    </div>
+  <% end %>
+</div>

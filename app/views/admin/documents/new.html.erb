@@ -1,0 +1,14 @@
+<div class="admin-documents-shell">
+  <header class="admin-documents-header">
+    <div>
+      <p class="admin-documents-kicker">Personal Document Studio</p>
+      <h1 class="admin-documents-title">Novo documento profissional</h1>
+      <p class="admin-documents-subtitle">Crie documentos em markdown e exporte PDFs com header e footer padrao.</p>
+    </div>
+    <div class="admin-documents-header-actions">
+      <%= link_to "Voltar", admin_documents_path, class: "admin-documents-button ghost" %>
+    </div>
+  </header>
+
+  <%= render "form", document: @document, submit_label: "Criar documento" %>
+</div>

@@ -1,0 +1,111 @@
+<%= form_with model: [:admin, document], class: "admin-documents-form" do |form| %>
+  <% if document.errors.any? %>
+    <div class="admin-documents-alert">
+      <h3>Revise os campos abaixo</h3>
+      <ul>
+        <% document.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="admin-documents-grid" data-controller="document-editor">
+    <div class="admin-documents-main">
+      <div class="admin-documents-card">
+        <div class="admin-documents-card-header">
+          <div>
+            <p class="admin-documents-kicker">Informacoes principais</p>
+            <h2 class="admin-documents-section-title">Detalhes do documento</h2>
+          </div>
+          <div class="admin-documents-toggle">
+            <%= form.check_box :published, class: "admin-documents-checkbox" %>
+            <%= form.label :published, "Publicar", class: "admin-documents-checkbox-label" %>
+          </div>
+        </div>
+
+        <div class="admin-documents-fields">
+          <div>
+            <%= form.label :title, "Titulo do documento", class: "admin-documents-label" %>
+            <%= form.text_field :title, class: "admin-documents-input", placeholder: "Ex: Proposta Comercial 2026" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-documents-card">
+        <div class="admin-documents-card-header">
+          <div>
+            <p class="admin-documents-kicker">Editor</p>
+            <h2 class="admin-documents-section-title">Conteudo em Markdown</h2>
+          </div>
+          <div class="admin-documents-badge">Atalhos com /</div>
+        </div>
+
+        <div class="admin-documents-editor">
+          <div class="admin-documents-editor-surface">
+            <%= tag.div "", id: "editor", class: "admin-documents-quill", data: { document_editor_target: "editor", document_editor_content_value: document.content } %>
+          </div>
+          <%= form.hidden_field :content, data: { document_editor_target: "content" } %>
+        </div>
+
+        <div class="admin-documents-tip">
+          Digite <span>/</span> para inserir titulos, tabelas, codigos e blocos especiais.
+        </div>
+      </div>
+    </div>
+
+    <aside class="admin-documents-aside">
+      <div class="admin-documents-card">
+        <div class="admin-documents-card-header">
+          <div>
+            <p class="admin-documents-kicker">Resumo</p>
+            <h2 class="admin-documents-section-title">Sumario automatico</h2>
+          </div>
+        </div>
+        <div id="toc" data-document-editor-target="toc" class="admin-documents-toc">
+          <% if document.table_of_contents.present? %>
+            <%= sanitize(document.table_of_contents, attributes: %w[id class href]) %>
+          <% else %>
+            <p class="admin-documents-muted">O sumario aparece a cada titulo criado.</p>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="admin-documents-card">
+        <div class="admin-documents-card-header">
+          <div>
+            <p class="admin-documents-kicker">Preview</p>
+            <h2 class="admin-documents-section-title">Visualizacao</h2>
+          </div>
+        </div>
+        <div id="preview" data-document-editor-target="preview" class="admin-documents-preview">
+          <p class="admin-documents-muted">O preview do markdown aparece aqui.</p>
+        </div>
+      </div>
+
+      <div class="admin-documents-card">
+        <div class="admin-documents-card-header">
+          <div>
+            <p class="admin-documents-kicker">Slash Commands</p>
+            <h2 class="admin-documents-section-title">Atalhos rapidos</h2>
+          </div>
+        </div>
+        <ul class="admin-documents-commands">
+          <li><span>/h1</span> Titulo principal</li>
+          <li><span>/h2</span> Subtitulo</li>
+          <li><span>/table</span> Tabela pronta</li>
+          <li><span>/code</span> Bloco de codigo</li>
+          <li><span>/quote</span> Citacao</li>
+          <li><span>/toc</span> Sumario</li>
+          <li><span>/image</span> Imagem</li>
+          <li><span>/callout</span> Caixa de destaque</li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="admin-documents-actions">
+    <%= link_to "Cancelar", admin_documents_path, class: "admin-documents-button ghost" %>
+    <%= form.submit submit_label, class: "admin-documents-button primary" %>
+  </div>
+<% end %>
