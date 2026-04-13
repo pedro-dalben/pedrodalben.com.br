@@ -1,0 +1,50 @@
+#!/bin/bash
+set -euo pipefail
+
+SERVICE="pedrodalben.service"
+APP_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+
+echo "🔄 Recarregando pedrodalben.com.br na VPS..."
+
+cd "$APP_ROOT"
+
+echo "⏹️  Parando serviço..."
+sudo systemctl stop "$SERVICE" || true
+
+echo "📥 Atualizando código..."
+CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+git fetch --all --prune
+git pull --ff-only origin "$CURRENT_BRANCH"
+
+echo "⚙️  Configurando ambiente..."
+set +u
+source ~/.rvm/scripts/rvm
+set -u
+export RAILS_ENV=production
+set -a
+source .env.production
+set +a
+
+echo "📦 Instalando dependências Ruby..."
+bundle install
+
+echo "📦 Instalando dependências Node..."
+npm install
+
+echo "🗄️  Executando migrations..."
+bundle exec rails db:migrate
+
+echo "🎨 Recriando assets..."
+bundle exec rails assets:clobber assets:precompile
+bundle exec vite build
+
+echo "🚀 Subindo serviço..."
+sudo systemctl start "$SERVICE"
+sleep 3
+
+echo "✅ Status do serviço:"
+sudo systemctl status "$SERVICE" --no-pager -l
+
+echo
+echo "🎉 Recarregamento concluído!"
+echo "📝 Logs: sudo journalctl -u $SERVICE -f"
