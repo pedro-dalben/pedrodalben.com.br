@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Source+Sans+3:wght@400;500;600&display=swap");
 
 @source "../../../app/views/**/*.html.erb";
 @source "../../../app/views/**/*.rb";
@@ -65,6 +66,10 @@ html.dark header.sticky.top-0 {
   color: rgb(165 180 252);
 }
 
+.theme-text-secondary {
+  color: rgb(203 213 225);
+}
+
 .theme-shadow {
   box-shadow: 0 10px 15px -3px rgb(79 70 229 / 0.5), 0 4px 6px -4px rgb(79 70 229 / 0.5);
 }
@@ -79,6 +84,20 @@ html.dark header.sticky.top-0 {
 
 .theme-accent-text {
   color: rgb(79 70 229);
+}
+
+/* Estilos de foco para acessibilidade */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgb(129 140 248);
+  outline-offset: 2px;
+}
+
+.theme-focus-ring:focus-visible {
+  outline: 2px solid rgb(129 140 248);
+  outline-offset: 2px;
 }
 
 .EasyMDEContainer {
@@ -364,5 +383,372 @@ html.dark .color-picker button[type="button"]:not([style*="background"]) {
   border-radius: 0.25rem;
 }
 
+.admin-documents-shell {
+  min-height: 100vh;
+  padding: 2.5rem clamp(1rem, 4vw, 3.5rem) 4rem;
+  background: radial-gradient(circle at top left, #f9f4ed, #f1f5f4 45%, #eef3f7 100%);
+  font-family: "Source Sans 3", "Helvetica Neue", sans-serif;
+  color: #1f2933;
+}
+
+.admin-documents-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.admin-documents-title {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.admin-documents-subtitle {
+  color: #52606d;
+  max-width: 42rem;
+  margin-top: 0.5rem;
+}
+
+.admin-documents-kicker {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: #8795a1;
+  font-weight: 600;
+}
+
+.admin-documents-header-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.admin-documents-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.admin-documents-grid-list {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.admin-documents-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.admin-documents-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .admin-documents-grid {
+    grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+  }
+}
+
+.admin-documents-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(6px);
+}
+
+.admin-documents-card.admin-documents-content {
+  padding: 2.5rem;
+}
+
+.admin-documents-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.admin-documents-section-title {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1f2933;
+  margin-top: 0.35rem;
+}
+
+.admin-documents-fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-documents-label {
+  display: block;
+  font-weight: 600;
+  color: #364152;
+  margin-bottom: 0.5rem;
+}
+
+.admin-documents-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #fff;
+  font-size: 1rem;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-documents-input:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.2);
+  outline: none;
+}
+
+.admin-documents-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.admin-documents-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: #0f766e;
+}
+
+.admin-documents-checkbox-label {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.admin-documents-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-documents-editor-surface {
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.admin-documents-quill {
+  min-height: 420px;
+}
+
+.admin-documents-tip {
+  font-size: 0.9rem;
+  color: #52606d;
+}
+
+.admin-documents-tip span {
+  font-weight: 700;
+  background: #eef2f7;
+  padding: 0.1rem 0.4rem;
+  border-radius: 0.4rem;
+}
+
+.admin-documents-badge {
+  background: #e0f2f1;
+  color: #0f766e;
+  font-weight: 600;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+}
+
+.admin-documents-toc,
+.admin-documents-preview {
+  font-size: 0.95rem;
+  color: #364152;
+}
+
+.admin-documents-preview {
+  background: #f8fafb;
+  border-radius: 0.9rem;
+  padding: 1rem;
+  min-height: 220px;
+}
+
+.admin-documents-muted {
+  color: #8795a1;
+}
+
+.admin-documents-commands {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  color: #4b5563;
+}
+
+.admin-documents-commands span {
+  display: inline-block;
+  min-width: 4.5rem;
+  font-weight: 600;
+  color: #0f766e;
+}
+
+.admin-documents-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.admin-documents-button {
+  padding: 0.6rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.admin-documents-button.primary {
+  background: #0f766e;
+  color: white;
+  box-shadow: 0 10px 20px rgba(15, 118, 110, 0.25);
+}
+
+.admin-documents-button.accent {
+  background: #b45309;
+  color: white;
+  box-shadow: 0 10px 20px rgba(180, 83, 9, 0.2);
+}
+
+.admin-documents-button.ghost {
+  background: white;
+  color: #1f2933;
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.admin-documents-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 22px rgba(15, 23, 42, 0.12);
+}
+
+.admin-documents-alert {
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  color: #9f1239;
+}
+
+.admin-documents-alert h3 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.admin-documents-alert ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.admin-documents-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  color: #52606d;
+  margin-top: 0.5rem;
+}
+
+.admin-documents-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.3rem;
+}
+
+.admin-documents-status {
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.admin-documents-status.published {
+  background: #ecfdf3;
+  color: #15803d;
+}
+
+.admin-documents-status.draft {
+  background: #fff7ed;
+  color: #b45309;
+}
+
+.admin-documents-empty {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1.5rem;
+  border: 1px dashed rgba(148, 163, 184, 0.5);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.slash-command-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 0.9rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  padding: 0.4rem;
+  display: grid;
+  gap: 0.25rem;
+  z-index: 1000;
+  min-width: 220px;
+}
+
+.slash-command-item {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+  font-size: 0.9rem;
+  color: #1f2933;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.slash-command-item:hover {
+  background: #f1f5f9;
+}
+
+.admin-documents-shell .ql-toolbar.ql-snow {
+  border: none;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+  background: #f8fafb;
+}
+
+.admin-documents-shell .ql-container.ql-snow {
+  border: none;
+}
+
+.admin-documents-shell .ql-editor {
+  font-family: "Source Sans 3", "Helvetica Neue", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
 
 

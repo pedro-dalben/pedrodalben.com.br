@@ -1,0 +1,42 @@
+<div class="admin-documents-shell">
+  <header class="admin-documents-header">
+    <div>
+      <p class="admin-documents-kicker">Documento</p>
+      <h1 class="admin-documents-title"><%= @document.title %></h1>
+      <p class="admin-documents-subtitle">Atualizado em <%= @document.updated_at.strftime('%d/%m/%Y') %></p>
+    </div>
+    <div class="admin-documents-header-actions">
+      <%= link_to "Editar", edit_admin_document_path(@document), class: "admin-documents-button ghost" %>
+      <%= link_to "Download PDF", download_pdf_admin_document_path(@document), class: "admin-documents-button accent" %>
+      <%= link_to "Voltar", admin_documents_path, class: "admin-documents-button ghost" %>
+    </div>
+  </header>
+
+  <div class="admin-documents-grid">
+    <aside class="admin-documents-aside">
+      <div class="admin-documents-card">
+        <div class="admin-documents-card-header">
+          <div>
+            <p class="admin-documents-kicker">Sumario</p>
+            <h2 class="admin-documents-section-title">Indice</h2>
+          </div>
+        </div>
+        <div class="admin-documents-toc">
+          <% if @document.table_of_contents.present? %>
+            <%= sanitize(@document.table_of_contents, attributes: %w[id class href]) %>
+          <% else %>
+            <p class="admin-documents-muted">Sem titulos para listar.</p>
+          <% end %>
+        </div>
+      </div>
+    </aside>
+
+    <div class="admin-documents-main">
+      <div class="admin-documents-card admin-documents-content">
+        <div class="prose prose-lg max-w-none">
+          <%= sanitize(render_markdown(@document.content), attributes: %w[id class href]) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

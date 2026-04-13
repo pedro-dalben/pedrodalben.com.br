@@ -1,7 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Pedro Dalben" %></title>
+    <title><%= content_for(:title) || "Pedro Dalben - CTO & Desenvolvedor Full Stack" %></title>
+    <meta name="description" content="<%= content_for(:description) || 'Desenvolvedor Full Stack e CTO especializado em Ruby on Rails, Vue.js e arquitetura de sistemas escaláveis. Mais de 5 anos de experiência em desenvolvimento web.' %>">
+    <meta name="keywords" content="desenvolvedor full stack, CTO, Ruby on Rails, Vue.js, JavaScript, Python, desenvolvimento web, arquitetura de software">
+    <meta name="author" content="Pedro Dalben">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:title" content="<%= content_for(:title) || 'Pedro Dalben - CTO & Desenvolvedor Full Stack' %>">
+    <meta property="og:description" content="<%= content_for(:description) || 'Desenvolvedor Full Stack e CTO especializado em Ruby on Rails, Vue.js e arquitetura de sistemas escaláveis.' %>">
+    <meta property="og:image" content="/icon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="<%= request.original_url %>">
+    <meta property="twitter:title" content="<%= content_for(:title) || 'Pedro Dalben - CTO & Desenvolvedor Full Stack' %>">
+    <meta property="twitter:description" content="<%= content_for(:description) || 'Desenvolvedor Full Stack e CTO especializado em Ruby on Rails, Vue.js e arquitetura de sistemas escaláveis.' %>">
+    <meta property="twitter:image" content="/icon.png">
+
+    <!-- Schema.org Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Pedro Dalben",
+      "jobTitle": "CTO & Desenvolvedor Full Stack",
+      "description": "Desenvolvedor Full Stack e CTO especializado em Ruby on Rails, Vue.js e arquitetura de sistemas escaláveis",
+      "url": "<%= root_url %>",
+      "image": "/icon.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/pedrodalbendemorais",
+        "https://github.com/BigBangcraft-server/Magnata"
+      ],
+      "knowsAbout": [
+        "Ruby on Rails",
+        "Vue.js",
+        "JavaScript",
+        "Python",
+        "Docker",
+        "PostgreSQL",
+        "DevOps",
+        "Arquitetura de Software"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Chief Technology Officer",
+        "occupationLocation": {
+          "@type": "Country",
+          "name": "Brazil"
+        }
+      }
+    }
+    </script>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">

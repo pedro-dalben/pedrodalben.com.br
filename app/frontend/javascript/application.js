@@ -1,4 +1,5 @@
 import "@hotwired/turbo-rails";
+import "quill/dist/quill.snow.css";
 import { Application } from "@hotwired/stimulus";
 
 const application = Application.start();
@@ -23,4 +24,3 @@ Object.keys(controllers).forEach((path) => {
 });
 
 export { application };
-

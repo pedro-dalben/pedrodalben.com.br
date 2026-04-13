@@ -3,11 +3,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
+  has_many :documents, dependent: :destroy
 
   validates :name, presence: true
   validates :role, presence: true, inclusion: { in: %w[admin user] }
 
   def admin?
-    role == 'admin'
+    role == "admin"
   end
 end
